@@ -33,9 +33,6 @@ export const aboutLines = [
   `Final-year B.Tech student (Computer Science – Data Science) at Sreyas Institute of Engineering and Technology with a CGPA of ${personal.cgpa}.`,
 ];
 
-export const aboutParagraph =
-  "I'm a final-year B.Tech student specializing in Computer Science (Data Science) at Sreyas Institute of Engineering and Technology, with hands-on experience building and deploying Machine Learning and Deep Learning projects using Python, PyTorch, Flask, and MediaPipe. I enjoy turning raw, messy data into working products — from a real-time sign language translator to a Bitcoin price forecasting tool — and I'm currently looking for opportunities where I can apply data engineering and data science skills to solve real business problems.";
-
 export const aboutCounters = [
   { label: "Projects Completed", value: 2, suffix: "+" },
   { label: "Certifications", value: 3, suffix: "+" },
