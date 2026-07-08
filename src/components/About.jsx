@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useInView, useMotionValue, useTransform, animate } from "framer-motion";
 import { FaDatabase, FaBrain, FaChartLine } from "react-icons/fa";
 import Reveal from "./Reveal";
-import { aboutLines, aboutParagraph, aboutCounters } from "../data/portfolioData";
+import { aboutLines, aboutCounters } from "../data/portfolioData";
 
 function Counter({ value, suffix = "", decimals = 0 }) {
   const ref = useRef(null);
@@ -93,7 +93,6 @@ export default function About() {
           {/* Right: lines + paragraph */}
           <Reveal variant="slide-left">
             <AnimatedLines />
-            <p className="text-ink-300 leading-relaxed mt-8">{aboutParagraph}</p>
           </Reveal>
         </div>
 
