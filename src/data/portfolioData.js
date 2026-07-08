@@ -6,7 +6,7 @@ export const personal = {
   fullName: "Boddupally Karthik",
   role: "Data Science Engineer",
   tagline: "Building intelligent solutions and uncovering insights from data.",
-  email: "karthikboddupally0@gmail.com",
+  email: "mailto:karthikboddupally0@gmail.com",
   phone: "9014478173",
   whatsapp: "https://wa.me/919014478173",
   linkedin: "https://www.linkedin.com/in/karthik-boddupally-824b70290/", // TODO: add real LinkedIn URL
