@@ -11,7 +11,7 @@ export default function Hero() {
     <section id="home" className="relative min-h-screen flex items-center pt-28 pb-16 overflow-hidden">
       <ParticleField />
 
-      <div className="relative z-10 max-w-7xl mx-auto w-full px-6 md:px-10 grid md:grid-cols-2 gap-12 items-center">
+      <div className="relative z-10 max-w-7xl mx-auto w-full px-6 md:px-10 grid md:grid-cols-[1fr_1.2fr] gap-10 items-center">
         {/* Left: text */}
         <div>
           <motion.p
