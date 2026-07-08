@@ -9,17 +9,24 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center pt-28 pb-16 overflow-hidden bg-cover bg-center bg-no-repeat"
-      style={{
-        backgroundImage: "url('/hero-illustration.png')",
-      }}
+      className="relative min-h-screen flex items-center overflow-hidden bg-[#090909]"
     >
-      {/* Background Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/30 to-black/10" />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-black/10" />
+      {/* Background Image */}
+      <img
+        src="/hero-illustration.png"
+        alt="Karthik working on a laptop"
+        className="absolute inset-0 w-full h-full object-contain object-right-center brightness-110"
+      />
+
+      {/* Left Gradient for Text Readability */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black via-black/45 to-transparent" />
+
+      {/* Optional subtle overall overlay */}
+      <div className="absolute inset-0 bg-black/10" />
 
       <ParticleField />
 
+      {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto w-full px-6 md:px-10">
         <div className="max-w-xl">
           <motion.p
@@ -117,9 +124,9 @@ export default function Hero() {
               <a
                 key={s.label}
                 href={s.href}
-                aria-label={s.label}
                 target={s.href.startsWith("http") ? "_blank" : undefined}
                 rel="noreferrer"
+                aria-label={s.label}
                 className="w-11 h-11 flex items-center justify-center rounded-full glass text-ink-100 hover:text-crimson-light hover:border-crimson/50 transition-colors"
               >
                 {s.icon}
