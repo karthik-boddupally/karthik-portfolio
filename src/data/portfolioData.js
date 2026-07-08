@@ -9,8 +9,8 @@ export const personal = {
   email: "karthikboddupally0@gmail.com",
   phone: "9014478173",
   whatsapp: "https://wa.me/919014478173",
-  linkedin: "#", // TODO: add real LinkedIn URL
-  github: "#", // TODO: add real GitHub URL
+  linkedin: "https://www.linkedin.com/in/karthik-boddupally-824b70290/", // TODO: add real LinkedIn URL
+  github: "https://github.com/karthik-boddupally", // TODO: add real GitHub URL
   resumeFile: "/Karthik_DS_Resume.pdf",
   cgpa: "9.14",
 };
@@ -114,7 +114,7 @@ export const projects = [
       "Training a Bidirectional LSTM on custom webcam gesture sequences and achieving reliable live tracking with MediaPipe under varying lighting and hand positions.",
     learnings:
       "Gained practical experience combining computer vision (MediaPipe, OpenCV) with sequence models (LSTM) and shipping it as a usable full-stack application.",
-    github: "#", // TODO: add real GitHub repo link
+    github: "https://github.com/karthik-boddupally/sign-language-translator", // TODO: add real GitHub repo link
     demo: "#",
   },
   {
@@ -135,7 +135,7 @@ export const projects = [
       "Engineering meaningful time-series features (momentum, moving averages) from raw price data to improve prediction accuracy.",
     learnings:
       "Deepened understanding of feature engineering for time-series data and how to evaluate forecasting models using RMSE.",
-    github: "#", // TODO: add real GitHub repo link
+    github: "https://github.com/karthik-boddupally/Bitcoin_Price_Prediction", // TODO: add real GitHub repo link
     demo: "#",
   },
 ];
@@ -147,35 +147,35 @@ export const achievements = [
     description:
       "Recognized for exceptional work ethic, professionalism, and consistently delivering high-quality results throughout the internship.",
     date: "June 2026",
-    link: "#",
+    link: "https://drive.google.com/file/d/18dRlw94rf1PsTPqI8bI-m2jXk5SxX_3w/view?usp=sharing",
   },
   {
     title: "Advanced Python Learning",
     org: "HackerRank",
     description: "Completed advanced Python learning track on HackerRank.",
     date: "",
-    link: "#",
+    link: "https://www.hackerrank.com/profile/karthikboddupal3",
   },
   {
     title: "Power BI Workshop",
     org: "Workshop Certification",
     description: "Completed a Power BI workshop covering data visualization and dashboard building.",
-    date: "",
-    link: "#",
+    date: "12th Oct 2025",
+    link: "https://drive.google.com/file/d/1XCKXCIHYQyMEQkB0WGrmlBh3ZOYEdEpV/view?usp=sharing",
   },
   {
     title: "Introduction to Machine Learning",
     org: "Swayam-NPTEL",
     description: "NPTEL certification covering the fundamentals of machine learning.",
-    date: "",
-    link: "#",
+    date: "JAN-APR 2026",
+    link: "https://drive.google.com/file/d/1Inle6EGLF5BCetobAKFS2vG6T6kAsOli/view?usp=sharing",
   },
   {
     title: "Programming, Data Structures and Algorithms using Python",
     org: "Swayam-NPTEL",
     description: "NPTEL certification covering Python programming, data structures, and algorithms.",
-    date: "",
-    link: "#",
+    date: "Jul-Sep 2025",
+    link: "https://drive.google.com/file/d/1-YciWR0dgShtivi_2f-wosGu4an4bvi4/view?usp=sharing",
   },
 ];
 
