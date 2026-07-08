@@ -35,8 +35,8 @@ export const aboutLines = [
 
 export const aboutCounters = [
   { label: "LeetCode Questions solved", value: 200, suffix: "+" },
-  { label: "Certifications", value: 3, suffix: "+" },
-  { label: "Internships", value: 3, suffix: "" },
+  { label: "Certifications", value: 9, suffix: "+" },
+  { label: "Internships", value: 2, suffix: "" },
   { label: "CGPA", value: parseFloat(personal.cgpa), suffix: "/10", decimals: 2 },
 ];
 
