@@ -86,7 +86,7 @@ export default function Navbar() {
         <a
           href={personal.resumeFile}
           download
-          className="hidden md:inline-flex items-center rounded-full bg-crimson px-5 py-2.5 text-sm font-semibold text-white btn-glow mr-20"
+          className="hidden md:inline-flex items-center rounded-full bg-crimson px-5 py-2.5 text-sm font-semibold text-white btn-glow mr-10"
         >
           Resume
         </a>
