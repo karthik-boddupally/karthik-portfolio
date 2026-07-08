@@ -3,17 +3,25 @@ import { TypeAnimation } from "react-type-animation";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { HiOutlineMail, HiArrowRight } from "react-icons/hi";
 import ParticleField from "./ParticleField";
-import HeroIllustration from "./HeroIllustration";
 import { personal } from "../data/portfolioData";
 
 export default function Hero() {
   return (
     <section id="home" className="relative min-h-screen flex items-center pt-28 pb-16 overflow-hidden">
+      {/* Full-bleed background image */}
+      <img
+        src="/hero-illustration.png"
+        alt="Karthik working on a laptop"
+        className="absolute inset-0 w-full h-full object-cover object-[65%_center]"
+      />
+      {/* Dark gradient overlay on the left so the text stays readable over the photo */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/40 to-black/10" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20" />
+
       <ParticleField />
 
-      <div className="relative z-10 max-w-7xl mx-auto w-full px-6 md:px-10 grid md:grid-cols-[1fr_1.2fr] gap-10 items-center">
-        {/* Left: text */}
-        <div>
+      <div className="relative z-10 max-w-7xl mx-auto w-full px-6 md:px-10">
+        <div className="max-w-xl">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -61,13 +69,13 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="flex flex-wrap gap-4 mb-10"
           >
-            <a
+            
               href="#projects"
               className="inline-flex items-center gap-2 rounded-full bg-crimson px-7 py-3.5 font-semibold text-white btn-glow"
             >
               View My Work <HiArrowRight />
             </a>
-            <a
+            
               href="#contact"
               className="inline-flex items-center gap-2 rounded-full border border-white/20 px-7 py-3.5 font-semibold text-ink-100 hover:border-crimson-light hover:text-crimson-light transition-colors"
             >
@@ -84,9 +92,9 @@ export default function Hero() {
             {[
               { icon: <FaLinkedinIn />, href: personal.linkedin, label: "LinkedIn" },
               { icon: <FaGithub />, href: personal.github, label: "GitHub" },
-              { icon: <HiOutlineMail />, href: personal.gmailCompose, label: "Email" },
+              { icon: <HiOutlineMail />, href: `mailto:${personal.email}`, label: "Email" },
             ].map((s) => (
-              <a
+              
                 key={s.label}
                 href={s.href}
                 aria-label={s.label}
@@ -99,15 +107,6 @@ export default function Hero() {
             ))}
           </motion.div>
         </div>
-
-        {/* Right: illustration */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-        >
-          <HeroIllustration />
-        </motion.div>
       </div>
     </section>
   );
