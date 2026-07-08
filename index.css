@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Sora", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  --color-bg-void: #0a0304;
+  --color-bg-maroon: #2a0507;
+  --color-crimson: #e01021;
+  --color-crimson-light: #ff4757;
+  --color-crimson-glow: #ff2d3a;
+  --color-ink-100: #f7ecec;
+  --color-ink-300: #d9c8c8;
+  --color-ink-500: #a68d8d;
+
+  --shadow-glow-sm: 0 0 24px rgba(224, 16, 33, 0.35);
+  --shadow-glow-lg: 0 0 60px rgba(224, 16, 33, 0.45);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg-void);
+  color: var(--color-ink-100);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display);
+}
+
+::selection {
+  background: var(--color-crimson);
+  color: white;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg-void);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-crimson);
+  border-radius: 8px;
+}
+
+/* App-wide gradient background, reused on every section/page */
+.app-bg {
+  background:
+    radial-gradient(ellipse 1200px 800px at 80% 10%, rgba(224, 16, 33, 0.35), transparent 60%),
+    radial-gradient(ellipse 900px 700px at 10% 90%, rgba(224, 16, 33, 0.18), transparent 55%),
+    linear-gradient(180deg, #0a0304 0%, #1c0405 50%, #0a0304 100%);
+  min-height: 100vh;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, var(--color-crimson-light), var(--color-crimson));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.btn-glow {
+  box-shadow: var(--shadow-glow-sm);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.btn-glow:hover {
+  box-shadow: var(--shadow-glow-lg);
+  transform: translateY(-2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
