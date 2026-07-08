@@ -15,12 +15,12 @@ export default function Hero() {
       <img
         src="/hero-illustration.png"
         alt="Karthik working on a laptop"
-         className="absolute right-0 bottom-0 w-full h-[88%] object-contain object-right-bottom brightness-110 scale-95"
+         className="absolute right-0 bottom-0 w-full h-[90%] object-contain object-right-bottom brightness-110 scale-95"
       />
 
       {/* Gradient Overlays */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/40 to-black/10" />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20" />
+     <div className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/25 to-transparent" />
+     <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-black/10" />
 
       <ParticleField />
 
