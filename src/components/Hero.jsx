@@ -64,24 +64,49 @@ export default function Hero() {
           </motion.p>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="flex flex-wrap gap-4 mb-10"
-          >
-            
-              href="#projects"
-              className="inline-flex items-center gap-2 rounded-full bg-crimson px-7 py-3.5 font-semibold text-white btn-glow"
-            >
-              View My Work <HiArrowRight />
-            </a>
-            
-              href="#contact"
-              className="inline-flex items-center gap-2 rounded-full border border-white/20 px-7 py-3.5 font-semibold text-ink-100 hover:border-crimson-light hover:text-crimson-light transition-colors"
-            >
-              Contact Me <HiArrowRight />
-            </a>
-          </motion.div>
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6, delay: 0.4 }}
+  className="flex flex-wrap gap-4 mb-10"
+>
+  <a
+    href="#projects"
+    className="inline-flex items-center gap-2 rounded-full bg-crimson px-7 py-3.5 font-semibold text-white btn-glow"
+  >
+    View My Work <HiArrowRight />
+  </a>
+
+  <a
+    href="#contact"
+    className="inline-flex items-center gap-2 rounded-full border border-white/20 px-7 py-3.5 font-semibold text-ink-100 hover:border-crimson-light hover:text-crimson-light transition-colors"
+  >
+    Contact Me <HiArrowRight />
+  </a>
+</motion.div>
+
+<motion.div
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ duration: 0.6, delay: 0.5 }}
+  className="flex gap-4"
+>
+  {[
+    { icon: <FaLinkedinIn />, href: personal.linkedin, label: "LinkedIn" },
+    { icon: <FaGithub />, href: personal.github, label: "GitHub" },
+    { icon: <HiOutlineMail />, href: `mailto:${personal.email}`, label: "Email" },
+  ].map((s) => (
+    <a
+      key={s.label}
+      href={s.href}
+      aria-label={s.label}
+      target={s.href.startsWith("http") ? "_blank" : undefined}
+      rel="noreferrer"
+      className="w-11 h-11 flex items-center justify-center rounded-full glass text-ink-100 hover:text-crimson-light hover:border-crimson/50 transition-colors"
+    >
+      {s.icon}
+    </a>
+  ))}
+</motion.div>
 
           <motion.div
             initial={{ opacity: 0 }}
