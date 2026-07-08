@@ -84,7 +84,7 @@ export default function Hero() {
             {[
               { icon: <FaLinkedinIn />, href: personal.linkedin, label: "LinkedIn" },
               { icon: <FaGithub />, href: personal.github, label: "GitHub" },
-              { icon: <HiOutlineMail />, href: `mailto:${personal.email}`, label: "Email" },
+              { icon: <HiOutlineMail />, href: personal.gmailCompose, label: "Email" },
             ].map((s) => (
               <a
                 key={s.label}
