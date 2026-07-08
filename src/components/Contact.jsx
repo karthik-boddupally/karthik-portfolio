@@ -37,7 +37,7 @@ export default function Contact() {
   const quickLinks = [
     { icon: <FaLinkedinIn />, label: "LinkedIn", href: personal.linkedin },
     { icon: <FaGithub />, label: "GitHub", href: personal.github },
-    { icon: <HiOutlineMail />, label: "Email", href: `mailto:${personal.email}` },
+    { icon: <HiOutlineMail />, label: "Email", href: personal.gmailCompose },
     { icon: <FaWhatsapp />, label: "WhatsApp", href: personal.whatsapp },
   ];
 
