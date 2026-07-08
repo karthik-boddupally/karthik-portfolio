@@ -9,24 +9,19 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center pt-28 pb-16 overflow-hidden"
+      className="relative min-h-screen flex items-center pt-28 pb-16 overflow-hidden bg-cover bg-center bg-no-repeat"
+      style={{
+        backgroundImage: "url('/hero-illustration.png')",
+      }}
     >
-      {/* Background Image */}
-      <img
-        src="/hero-illustration.png"
-        alt="Karthik working on a laptop"
-         className="absolute right-0 bottom-0 w-full h-[95%] object-contain object-right-bottom brightness-110 scale-95"
-      />
-
-      {/* Gradient Overlays */}
-     <div className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/25 to-transparent" />
-     <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-black/10" />
+      {/* Background Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/30 to-black/10" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-black/10" />
 
       <ParticleField />
 
       <div className="relative z-10 max-w-7xl mx-auto w-full px-6 md:px-10">
         <div className="max-w-xl">
-          {/* Greeting */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -36,7 +31,6 @@ export default function Hero() {
             Hello, I'm
           </motion.p>
 
-          {/* Name */}
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -46,7 +40,6 @@ export default function Hero() {
             {personal.name}
           </motion.h1>
 
-          {/* Animated Role */}
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -68,7 +61,6 @@ export default function Hero() {
             />
           </motion.h2>
 
-          {/* Tagline */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -78,7 +70,6 @@ export default function Hero() {
             {personal.tagline}
           </motion.p>
 
-          {/* Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -100,7 +91,6 @@ export default function Hero() {
             </a>
           </motion.div>
 
-          {/* Social Icons */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
