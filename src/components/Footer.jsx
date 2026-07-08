@@ -36,7 +36,7 @@ export default function Footer() {
               {[
                 { icon: <FaLinkedinIn />, href: personal.linkedin },
                 { icon: <FaGithub />, href: personal.github },
-                { icon: <HiOutlineMail />, href: `mailto:${personal.email}` },
+                { icon: <HiOutlineMail />, href: personal.gmailCompose },
               ].map((s, i) => (
                 <a
                   key={i}
