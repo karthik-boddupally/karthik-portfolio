@@ -15,7 +15,7 @@ export default function Hero() {
       <img
         src="/hero-illustration.png"
         alt="Karthik working on a laptop"
-        className="absolute inset-0 w-full h-full object-cover object-[65%_center]"
+         className="absolute right-0 bottom-0 w-full h-[88%] object-contain object-right-bottom brightness-110 scale-95"
       />
 
       {/* Gradient Overlays */}
