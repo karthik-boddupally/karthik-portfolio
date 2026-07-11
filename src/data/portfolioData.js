@@ -7,11 +7,10 @@ export const personal = {
   role: "Data Science Engineer",
   tagline: "Building intelligent solutions and uncovering insights from data.",
   email: "karthikboddupally0@gmail.com",
-  gmailCompose: "https://mail.google.com/mail/?view=cm&fs=1&to=karthikboddupally0@gmail.com",
   phone: "9014478173",
   whatsapp: "https://wa.me/919014478173",
-  linkedin: "https://www.linkedin.com/in/karthik-boddupally-824b70290/", // TODO: add real LinkedIn URL
-  github: "https://github.com/karthik-boddupally", // TODO: add real GitHub URL
+  linkedin: "#", // TODO: add real LinkedIn URL
+  github: "#", // TODO: add real GitHub URL
   resumeFile: "/Karthik_DS_Resume.pdf",
   cgpa: "9.14",
 };
@@ -33,10 +32,13 @@ export const aboutLines = [
   `Final-year B.Tech student (Computer Science – Data Science) at Sreyas Institute of Engineering and Technology with a CGPA of ${personal.cgpa}.`,
 ];
 
+export const aboutParagraph =
+  "I'm a final-year B.Tech student specializing in Computer Science (Data Science) at Sreyas Institute of Engineering and Technology, with hands-on experience building and deploying Machine Learning and Deep Learning projects using Python, PyTorch, Flask, and MediaPipe. I enjoy turning raw, messy data into working products — from a real-time sign language translator to a Bitcoin price forecasting tool — and I'm currently looking for opportunities where I can apply data engineering and data science skills to solve real business problems.";
+
 export const aboutCounters = [
-  { label: "LeetCode Questions solved", value: 200, suffix: "+" },
-  { label: "Certifications", value: 9, suffix: "+" },
-  { label: "Internships", value: 2, suffix: "" },
+  { label: "Projects Completed", value: 2, suffix: "+" },
+  { label: "Certifications", value: 3, suffix: "+" },
+  { label: "Internships", value: 3, suffix: "" },
   { label: "CGPA", value: parseFloat(personal.cgpa), suffix: "/10", decimals: 2 },
 ];
 
@@ -112,7 +114,7 @@ export const projects = [
       "Training a Bidirectional LSTM on custom webcam gesture sequences and achieving reliable live tracking with MediaPipe under varying lighting and hand positions.",
     learnings:
       "Gained practical experience combining computer vision (MediaPipe, OpenCV) with sequence models (LSTM) and shipping it as a usable full-stack application.",
-    github: "https://github.com/karthik-boddupally/sign-language-translator", // TODO: add real GitHub repo link
+    github: "#", // TODO: add real GitHub repo link
     demo: "#",
   },
   {
@@ -133,47 +135,44 @@ export const projects = [
       "Engineering meaningful time-series features (momentum, moving averages) from raw price data to improve prediction accuracy.",
     learnings:
       "Deepened understanding of feature engineering for time-series data and how to evaluate forecasting models using RMSE.",
-    github: "https://github.com/karthik-boddupally/Bitcoin_Price_Prediction", // TODO: add real GitHub repo link
+    github: "#", // TODO: add real GitHub repo link
     demo: "#",
+  },
+];
+
+export const certifications = [
+  {
+    title: "Introduction to Machine Learning",
+    subtitle: "NPTEL/Swayam",
+    description: "Comprehensive foundational course in Machine Learning algorithms and applications.",
+    link: "#", // TODO: add real credential link
+  },
+  {
+    title: "Programming, Data Structures and Algorithms using Python",
+    subtitle: "NPTEL/Swayam",
+    description: "Advanced Python programming, focusing on efficient data structures and algorithm design.",
+    link: "#", // TODO: add real credential link
+  },
+  {
+    title: "Power BI Workshop",
+    subtitle: "Data visualization and dashboard building",
+    description: "Hands-on workshop creating interactive dashboards and data visualization reports.",
+    link: "#", // TODO: add real credential link
   },
 ];
 
 export const achievements = [
   {
     title: "Letter of Recommendation",
-    org: "Future Interns",
-    description:
-      "Recognized for exceptional work ethic, professionalism, and consistently delivering high-quality results throughout the internship.",
+    subtitle: "Future Interns",
+    description: "Recognized for exceptional work ethic, professionalism, and consistently delivering high-quality results throughout the internship.",
     date: "June 2026",
-    link: "https://drive.google.com/file/d/18dRlw94rf1PsTPqI8bI-m2jXk5SxX_3w/view?usp=sharing",
   },
   {
     title: "Advanced Python Learning",
-    org: "HackerRank",
-    description: "Completed advanced Python learning track on HackerRank.",
+    subtitle: "HackerRank",
+    description: "Completed advanced Python learning, demonstrating high proficiency.",
     date: "",
-    link: "https://www.hackerrank.com/profile/karthikboddupal3",
-  },
-  {
-    title: "Power BI Workshop",
-    org: "Workshop Certification",
-    description: "Completed a Power BI workshop covering data visualization and dashboard building.",
-    date: "12th Oct 2025",
-    link: "https://drive.google.com/file/d/1XCKXCIHYQyMEQkB0WGrmlBh3ZOYEdEpV/view?usp=sharing",
-  },
-  {
-    title: "Introduction to Machine Learning",
-    org: "Swayam-NPTEL",
-    description: "NPTEL certification covering the fundamentals of machine learning.",
-    date: "JAN-APR 2026",
-    link: "https://drive.google.com/file/d/1Inle6EGLF5BCetobAKFS2vG6T6kAsOli/view?usp=sharing",
-  },
-  {
-    title: "Programming, Data Structures and Algorithms using Python",
-    org: "Swayam-NPTEL",
-    description: "NPTEL certification covering Python programming, data structures, and algorithms.",
-    date: "Jul-Sep 2025",
-    link: "https://drive.google.com/file/d/1-YciWR0dgShtivi_2f-wosGu4an4bvi4/view?usp=sharing",
   },
 ];
 
