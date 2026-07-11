@@ -1,43 +1,14 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
 import { FaLinkedinIn, FaGithub, FaWhatsapp } from "react-icons/fa";
 import { HiOutlineMail, HiDownload } from "react-icons/hi";
 import Reveal from "./Reveal";
 import { personal } from "../data/portfolioData";
 
-// Empty string = same-origin relative call to /api/contact, which is how
-// this works out of the box on Vercel (the api/ folder becomes a serverless
-// function on the same domain). Set VITE_API_URL only if you're pointing at
-// a separately-hosted server/ backend instead.
-const API_URL = import.meta.env.VITE_API_URL || "";
-
 export default function Contact() {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [status, setStatus] = useState("idle"); // idle | sending | sent | error
-
-  const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setStatus("sending");
-    try {
-      const res = await fetch(`${API_URL}/api/contact`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-      if (!res.ok) throw new Error("Request failed");
-      setStatus("sent");
-      setForm({ name: "", email: "", message: "" });
-    } catch {
-      setStatus("error");
-    }
-  };
-
   const quickLinks = [
     { icon: <FaLinkedinIn />, label: "LinkedIn", href: personal.linkedin },
     { icon: <FaGithub />, label: "GitHub", href: personal.github },
-    { icon: <HiOutlineMail />, label: "Email", href: personal.gmailCompose },
+    { icon: <HiOutlineMail />, label: "Email", href: personal.gmailCompose || `mailto:${personal.email}` },
     { icon: <FaWhatsapp />, label: "WhatsApp", href: personal.whatsapp },
   ];
 
@@ -49,7 +20,7 @@ export default function Contact() {
           <h2 className="font-display text-3xl md:text-5xl font-bold mb-16">Let's Work Together</h2>
         </Reveal>
 
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
           <Reveal variant="slide-right">
             <p className="text-ink-300 leading-relaxed mb-8 max-w-md">
               I'm currently open to internships and full-time opportunities in data science and data
@@ -58,7 +29,7 @@ export default function Contact() {
 
             <div className="grid grid-cols-2 gap-4 mb-8">
               {quickLinks.map((l) => (
-                <a
+                
                   key={l.label}
                   href={l.href}
                   target={l.href.startsWith("http") ? "_blank" : undefined}
@@ -71,7 +42,7 @@ export default function Contact() {
               ))}
             </div>
 
-            <a
+            
               href={personal.resumeFile}
               download
               className="inline-flex items-center gap-2 rounded-full bg-crimson px-6 py-3 font-semibold text-white btn-glow"
@@ -80,52 +51,35 @@ export default function Contact() {
             </a>
           </Reveal>
 
+          {/* Get In Touch visual */}
           <Reveal variant="slide-left">
-            <form onSubmit={handleSubmit} className="glass rounded-2xl p-6 md:p-8 space-y-4">
-              <div>
-                <label className="block text-sm text-ink-300 mb-1.5" htmlFor="name">Name</label>
-                <input
-                  id="name" name="name" required value={form.name} onChange={handleChange}
-                  className="w-full rounded-lg bg-white/5 border border-white/10 px-4 py-3 text-ink-100 placeholder:text-ink-500 focus:outline-none focus:border-crimson"
-                  placeholder="Your name"
-                />
-              </div>
-              <div>
-                <label className="block text-sm text-ink-300 mb-1.5" htmlFor="email">Email</label>
-                <input
-                  id="email" name="email" type="email" required value={form.email} onChange={handleChange}
-                  className="w-full rounded-lg bg-white/5 border border-white/10 px-4 py-3 text-ink-100 placeholder:text-ink-500 focus:outline-none focus:border-crimson"
-                  placeholder="you@example.com"
-                />
-              </div>
-              <div>
-                <label className="block text-sm text-ink-300 mb-1.5" htmlFor="message">Message</label>
-                <textarea
-                  id="message" name="message" required rows={4} value={form.message} onChange={handleChange}
-                  className="w-full rounded-lg bg-white/5 border border-white/10 px-4 py-3 text-ink-100 placeholder:text-ink-500 focus:outline-none focus:border-crimson resize-none"
-                  placeholder="Tell me about the opportunity..."
-                />
-              </div>
-
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                type="submit"
-                disabled={status === "sending"}
-                className="w-full rounded-full bg-crimson py-3.5 font-semibold text-white btn-glow disabled:opacity-60"
+            <div className="glass rounded-3xl p-10 md:p-14 flex flex-col items-center justify-center text-center">
+              <motion.div
+                animate={{ y: [0, -12, 0] }}
+                transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
+                className="relative mb-6"
               >
-                {status === "sending" ? "Sending..." : "Send Message"}
-              </motion.button>
+                <div
+                  className="absolute inset-0 blur-2xl opacity-70"
+                  style={{ background: "radial-gradient(circle, rgba(255,45,58,0.6), transparent 70%)" }}
+                />
+                <svg viewBox="0 0 120 120" className="relative w-28 h-28 md:w-32 md:h-32">
+                  <circle cx="60" cy="60" r="58" fill="none" stroke="#e01021" strokeWidth="1.5" opacity="0.35" />
+                  <circle cx="60" cy="60" r="46" fill="rgba(224,16,33,0.12)" stroke="#ff4757" strokeWidth="1" />
+                  <rect x="32" y="46" width="56" height="38" rx="6" fill="#1a0507" stroke="#ff4757" strokeWidth="2" />
+                  <path d="M34 48 L60 68 L86 48" fill="none" stroke="#ff4757" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  <circle cx="94" cy="34" r="3" fill="#ff4757" />
+                  <circle cx="24" cy="90" r="2.5" fill="#ff4757" opacity="0.7" />
+                </svg>
+              </motion.div>
 
-              {status === "sent" && (
-                <p className="text-sm text-green-400">Thanks! Your message has been sent — I'll get back to you soon.</p>
-              )}
-              {status === "error" && (
-                <p className="text-sm text-crimson-light">
-                  Couldn't reach the server. Please email me directly at {personal.email}.
-                </p>
-              )}
-            </form>
+              <h3 className="font-display text-xl md:text-2xl font-bold text-ink-100 mb-2">
+                Let's start a conversation
+              </h3>
+              <p className="text-ink-300 text-sm max-w-xs">
+                Reach out directly through email, LinkedIn, or WhatsApp — whichever's easiest for you.
+              </p>
+            </div>
           </Reveal>
         </div>
       </div>
