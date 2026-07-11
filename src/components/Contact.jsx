@@ -29,7 +29,7 @@ export default function Contact() {
 
             <div className="grid grid-cols-2 gap-4 mb-8">
               {quickLinks.map((l) => (
-                
+                <a
                   key={l.label}
                   href={l.href}
                   target={l.href.startsWith("http") ? "_blank" : undefined}
@@ -42,7 +42,7 @@ export default function Contact() {
               ))}
             </div>
 
-            
+            <a
               href={personal.resumeFile}
               download
               className="inline-flex items-center gap-2 rounded-full bg-crimson px-6 py-3 font-semibold text-white btn-glow"
@@ -66,8 +66,10 @@ export default function Contact() {
                 <svg viewBox="0 0 120 120" className="relative w-28 h-28 md:w-32 md:h-32">
                   <circle cx="60" cy="60" r="58" fill="none" stroke="#e01021" strokeWidth="1.5" opacity="0.35" />
                   <circle cx="60" cy="60" r="46" fill="rgba(224,16,33,0.12)" stroke="#ff4757" strokeWidth="1" />
+                  {/* envelope */}
                   <rect x="32" y="46" width="56" height="38" rx="6" fill="#1a0507" stroke="#ff4757" strokeWidth="2" />
                   <path d="M34 48 L60 68 L86 48" fill="none" stroke="#ff4757" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  {/* small orbiting dot */}
                   <circle cx="94" cy="34" r="3" fill="#ff4757" />
                   <circle cx="24" cy="90" r="2.5" fill="#ff4757" opacity="0.7" />
                 </svg>
