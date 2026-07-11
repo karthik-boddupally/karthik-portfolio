@@ -115,7 +115,7 @@ export const projects = [
       "Training a Bidirectional LSTM on custom webcam gesture sequences and achieving reliable live tracking with MediaPipe under varying lighting and hand positions.",
     learnings:
       "Gained practical experience combining computer vision (MediaPipe, OpenCV) with sequence models (LSTM) and shipping it as a usable full-stack application.",
-    github: "", // TODO: add real GitHub repo link
+    github: "https://github.com/karthik-boddupally/SIGN-LANGUAGE-TRANSLATOR", // TODO: add real GitHub repo link
     demo: "#",
   },
   {
@@ -136,7 +136,7 @@ export const projects = [
       "Engineering meaningful time-series features (momentum, moving averages) from raw price data to improve prediction accuracy.",
     learnings:
       "Deepened understanding of feature engineering for time-series data and how to evaluate forecasting models using RMSE.",
-    github: "#", // TODO: add real GitHub repo link
+    github: "https://github.com/karthik-boddupally/Bitcoin_Price_Prediction", // TODO: add real GitHub repo link
     demo: "#",
   },
 ];
@@ -146,19 +146,19 @@ export const certifications = [
     title: "Introduction to Machine Learning",
     subtitle: "NPTEL/Swayam",
     description: "Comprehensive foundational course in Machine Learning algorithms and applications.",
-    link: "#", // TODO: add real credential link
+    link: "https://drive.google.com/file/d/1Inle6EGLF5BCetobAKFS2vG6T6kAsOli/view?usp=sharing", // TODO: add real credential link
   },
   {
     title: "Programming, Data Structures and Algorithms using Python",
     subtitle: "NPTEL/Swayam",
     description: "Advanced Python programming, focusing on efficient data structures and algorithm design.",
-    link: "#", // TODO: add real credential link
+    link: "https://drive.google.com/file/d/1-YciWR0dgShtivi_2f-wosGu4an4bvi4/view?usp=drive_link", // TODO: add real credential link
   },
   {
     title: "Power BI Workshop",
-    subtitle: "Data visualization and dashboard building",
+    subtitle: "Office Master",
     description: "Hands-on workshop creating interactive dashboards and data visualization reports.",
-    link: "#", // TODO: add real credential link
+    link: "https://drive.google.com/file/d/1XCKXCIHYQyMEQkB0WGrmlBh3ZOYEdEpV/view?usp=drive_link", // TODO: add real credential link
   },
 ];
 
@@ -168,6 +168,7 @@ export const achievements = [
     subtitle: "Future Interns",
     description: "Recognized for exceptional work ethic, professionalism, and consistently delivering high-quality results throughout the internship.",
     date: "June 2026",
+    link: "https://drive.google.com/file/d/1aFRB3346xutD338pW4-mjRbZhNRedkin/view?usp=sharing",
   },
   {
     title: "Advanced Python Learning",
