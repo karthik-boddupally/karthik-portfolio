@@ -1,6 +1,68 @@
-import { FaAward, FaCertificate } from "react-icons/fa";
+import { FaCertificate, FaAward, FaExternalLinkAlt } from "react-icons/fa";
 import Reveal from "./Reveal";
-import { achievements } from "../data/portfolioData";
+import { certifications, achievements } from "../data/portfolioData";
+
+function SectionHeading({ children }) {
+  return (
+    <div className="flex items-center gap-4 mb-8">
+      <h3 className="font-display text-2xl md:text-3xl font-bold text-ink-100">{children}</h3>
+      <span className="h-[2px] w-16 bg-crimson" />
+    </div>
+  );
+}
+
+function CertificationCard({ item, index }) {
+  return (
+    <Reveal variant="fade-up" delay={index * 0.08}>
+      <div className="glass rounded-2xl p-5 md:p-6 hover:border-crimson/50 hover:-translate-y-1 transition-all duration-300">
+        <div className="flex gap-4">
+          <div className="w-11 h-11 flex-shrink-0 rounded-full bg-crimson/15 border border-crimson/40 flex items-center justify-center text-crimson-light text-lg">
+            <FaCertificate />
+          </div>
+          <div className="flex-1 min-w-0">
+            <h4 className="font-display font-bold text-ink-100 text-base md:text-lg">{item.title}</h4>
+            <p className="text-crimson-light text-sm font-medium mt-0.5">{item.subtitle}</p>
+            <p className="text-ink-300 text-sm mt-2">{item.description}</p>
+            <a
+              href={item.link}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-1.5 text-ink-100 text-sm font-semibold mt-4 hover:text-crimson-light transition-colors"
+            >
+              View Credential <FaExternalLinkAlt size={11} />
+            </a>
+          </div>
+        </div>
+      </div>
+    </Reveal>
+  );
+}
+
+function AchievementCard({ item, index }) {
+  return (
+    <Reveal variant="fade-up" delay={index * 0.08}>
+      <div className="glass rounded-2xl p-5 md:p-6 hover:border-crimson/50 hover:-translate-y-1 transition-all duration-300">
+        <div className="flex gap-4">
+          <div className="w-11 h-11 flex-shrink-0 rounded-full bg-crimson/15 border border-crimson/40 flex items-center justify-center text-crimson-light text-lg">
+            <FaAward />
+          </div>
+          <div className="flex-1 min-w-0">
+            <div className="flex items-start justify-between gap-3">
+              <h4 className="font-display font-bold text-ink-100 text-base md:text-lg">{item.title}</h4>
+              {item.date && (
+                <span className="text-ink-500 text-xs font-mono whitespace-nowrap bg-white/5 rounded-full px-2.5 py-1">
+                  {item.date}
+                </span>
+              )}
+            </div>
+            <p className="text-crimson-light text-sm font-medium mt-0.5">{item.subtitle}</p>
+            <p className="text-ink-300 text-sm mt-2">{item.description}</p>
+          </div>
+        </div>
+      </div>
+    </Reveal>
+  );
+}
 
 export default function Achievements() {
   return (
@@ -11,20 +73,24 @@ export default function Achievements() {
           <h2 className="font-display text-3xl md:text-5xl font-bold mb-16">Achievements & Certifications</h2>
         </Reveal>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {achievements.map((a, i) => (
-            <Reveal key={a.title} variant="zoom" delay={i * 0.08}>
-              <div className="glass rounded-2xl p-6 h-full flex flex-col hover:-translate-y-1.5 hover:border-crimson/50 transition-all duration-300">
-                <div className="w-12 h-12 rounded-xl bg-crimson/10 border border-crimson/30 flex items-center justify-center text-crimson-light text-xl mb-4">
-                  {i === 0 ? <FaAward /> : <FaCertificate />}
-                </div>
-                <h3 className="font-display text-lg font-bold mb-1">{a.title}</h3>
-                <p className="text-crimson-light text-sm font-medium mb-2">{a.org}</p>
-                <p className="text-ink-300 text-sm flex-1">{a.description}</p>
-                {a.date && <p className="text-ink-500 text-xs mt-4">{a.date}</p>}
-              </div>
-            </Reveal>
-          ))}
+        <div className="grid md:grid-cols-2 gap-12">
+          <div>
+            <SectionHeading>Certifications</SectionHeading>
+            <div className="space-y-5">
+              {certifications.map((item, i) => (
+                <CertificationCard key={item.title} item={item} index={i} />
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <SectionHeading>Achievements</SectionHeading>
+            <div className="space-y-5">
+              {achievements.map((item, i) => (
+                <AchievementCard key={item.title} item={item} index={i} />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
