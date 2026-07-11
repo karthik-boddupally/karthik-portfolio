@@ -87,7 +87,7 @@ export default function Projects() {
               </div>
 
               <div className="flex flex-wrap gap-4">
-                
+                <a
                   href={project.github}
                   target="_blank"
                   rel="noreferrer"
@@ -95,7 +95,7 @@ export default function Projects() {
                 >
                   <FaGithub /> GitHub
                 </a>
-                
+                <a
                   href={project.demo}
                   target="_blank"
                   rel="noreferrer"
