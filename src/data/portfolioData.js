@@ -7,6 +7,7 @@ export const personal = {
   role: "Data Science Engineer",
   tagline: "Building intelligent solutions and uncovering insights from data.",
   email: "karthikboddupally0@gmail.com",
+  gmailCompose: "https://mail.google.com/mail/?view=cm&fs=1&to=karthikboddupally0@gmail.com",
   phone: "9014478173",
   whatsapp: "https://wa.me/919014478173",
   linkedin: "#", // TODO: add real LinkedIn URL
