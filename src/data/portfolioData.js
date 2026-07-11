@@ -10,8 +10,8 @@ export const personal = {
   gmailCompose: "https://mail.google.com/mail/?view=cm&fs=1&to=karthikboddupally0@gmail.com",
   phone: "9014478173",
   whatsapp: "https://wa.me/919014478173",
-  linkedin: "#", // TODO: add real LinkedIn URL
-  github: "#", // TODO: add real GitHub URL
+  linkedin: "https://www.linkedin.com/in/karthik-boddupally-824b70290/", // TODO: add real LinkedIn URL
+  github: "https://github.com/karthik-boddupally", // TODO: add real GitHub URL
   resumeFile: "/Karthik_DS_Resume.pdf",
   cgpa: "9.14",
 };
@@ -37,8 +37,8 @@ export const aboutParagraph =
   "I'm a final-year B.Tech student specializing in Computer Science (Data Science) at Sreyas Institute of Engineering and Technology, with hands-on experience building and deploying Machine Learning and Deep Learning projects using Python, PyTorch, Flask, and MediaPipe. I enjoy turning raw, messy data into working products — from a real-time sign language translator to a Bitcoin price forecasting tool — and I'm currently looking for opportunities where I can apply data engineering and data science skills to solve real business problems.";
 
 export const aboutCounters = [
-  { label: "Projects Completed", value: 2, suffix: "+" },
-  { label: "Certifications", value: 3, suffix: "+" },
+  { label: "Leetcode Questions Solved", value: 200, suffix: "+" },
+  { label: "Certifications", value: 9, suffix: "+" },
   { label: "Internships", value: 3, suffix: "" },
   { label: "CGPA", value: parseFloat(personal.cgpa), suffix: "/10", decimals: 2 },
 ];
@@ -115,7 +115,7 @@ export const projects = [
       "Training a Bidirectional LSTM on custom webcam gesture sequences and achieving reliable live tracking with MediaPipe under varying lighting and hand positions.",
     learnings:
       "Gained practical experience combining computer vision (MediaPipe, OpenCV) with sequence models (LSTM) and shipping it as a usable full-stack application.",
-    github: "#", // TODO: add real GitHub repo link
+    github: "", // TODO: add real GitHub repo link
     demo: "#",
   },
   {
