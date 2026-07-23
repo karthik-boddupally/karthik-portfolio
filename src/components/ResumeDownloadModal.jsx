@@ -83,28 +83,28 @@ export default function ResumeDownloadModal({ open, onClose }) {
             <form onSubmit={handleDownload}>
               <input
                 type="text"
-                placeholder="Your Name *"
+                placeholder="Name *"
                 value={name}
                 required
                 onChange={(e) => setName(e.target.value)}
                 className="w-full rounded-lg bg-white/5 border border-white/10 px-4 py-3 text-ink-100 mb-3"
               />
-
+              
+              <input
+                type="email"
+                placeholder="Email *"
+                value={email}
+                required
+                onChange={(e) => setEmail(e.target.value)}
+                className="w-full rounded-lg bg-white/5 border border-white/10 px-4 py-3 text-ink-100 placeholder:text-ink-500 focus:outline-none focus:border-crimson mb-5"
+              />
+              
               <input
                 type="text"
                 placeholder="Company (Optional)"
                 value={company}
                 onChange={(e) => setCompany(e.target.value)}
                 className="w-full rounded-lg bg-white/5 border border-white/10 px-4 py-3 text-ink-100 mb-3"
-              />
-
-              <input
-                type="email"
-                placeholder="Your Email *"
-                value={email}
-                required
-                onChange={(e) => setEmail(e.target.value)}
-                className="w-full rounded-lg bg-white/5 border border-white/10 px-4 py-3 text-ink-100 placeholder:text-ink-500 focus:outline-none focus:border-crimson mb-5"
               />
 
               <div className="flex gap-3">
