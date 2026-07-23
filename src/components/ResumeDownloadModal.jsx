@@ -100,10 +100,11 @@ export default function ResumeDownloadModal({ open, onClose }) {
 
               <input
                 type="email"
-                placeholder="Email (Optional)"
+                placeholder="Your Email *"
                 value={email}
+                required
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full rounded-lg bg-white/5 border border-white/10 px-4 py-3 text-ink-100 mb-5"
+                className="w-full rounded-lg bg-white/5 border border-white/10 px-4 py-3 text-ink-100 placeholder:text-ink-500 focus:outline-none focus:border-crimson mb-5"
               />
 
               <div className="flex gap-3">
