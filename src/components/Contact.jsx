@@ -1,10 +1,13 @@
 import { motion } from "framer-motion";
+import { useState } from "react";          
 import { FaLinkedinIn, FaGithub, FaWhatsapp } from "react-icons/fa";
 import { HiOutlineMail, HiDownload } from "react-icons/hi";
 import Reveal from "./Reveal";
+import ResumeDownloadModal from "./ResumeDownloadModal";  
 import { personal } from "../data/portfolioData";
 
 export default function Contact() {
+  const [resumeModalOpen, setResumeModalOpen] = useState(false);
   const quickLinks = [
     { icon: <FaLinkedinIn />, label: "LinkedIn", href: personal.linkedin },
     { icon: <FaGithub />, label: "GitHub", href: personal.github },
@@ -42,13 +45,12 @@ export default function Contact() {
               ))}
             </div>
 
-            <a
-              href={personal.resumeFile}
-              download
-              className="inline-flex items-center gap-2 rounded-full bg-crimson px-6 py-3 font-semibold text-white btn-glow"
+            <button
+            onClick={() => setResumeModalOpen(true)}
+            className="inline-flex items-center gap-2 rounded-full bg-crimson px-6 py-3 font-semibold text-white btn-glow"
             >
-              <HiDownload /> Download Resume
-            </a>
+            <HiDownload /> Download Resume
+            </button>
           </Reveal>
 
           {/* Get In Touch visual */}
@@ -84,7 +86,14 @@ export default function Contact() {
             </div>
           </Reveal>
         </div>
+      
       </div>
+      <ResumeDownloadModal
+        open={resumeModalOpen}
+        onClose={() => setResumeModalOpen(false)}
+      />
     </section>
+  );
+}
   );
 }
