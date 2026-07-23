@@ -9,6 +9,9 @@ export default function Navbar() {
   const [active, setActive] = useState("#home");
   const [open, setOpen] = useState(false);
 
+  // NEW
+  const [resumeModalOpen, setResumeModalOpen] = useState(false);
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll);
@@ -32,8 +35,6 @@ export default function Navbar() {
         }
       },
       {
-        // Counts a section as "active" once it crosses the upper-middle
-        // of the viewport, accounting for the fixed navbar height.
         rootMargin: "-120px 0px -55% 0px",
         threshold: [0, 0.25, 0.5, 0.75, 1],
       }
@@ -47,17 +48,23 @@ export default function Navbar() {
     setActive(href);
     setOpen(false);
   };
+
   return (
     <motion.header
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${
-        scrolled ? "bg-bg-void/80 backdrop-blur-md border-b border-white/5" : "bg-transparent"
+        scrolled
+          ? "bg-bg-void/80 backdrop-blur-md border-b border-white/5"
+          : "bg-transparent"
       }`}
     >
       <nav className="max-w-7xl mx-auto flex items-center justify-between px-6 md:px-10 py-5">
-        <a href="#home" className="font-display text-2xl font-bold text-ink-100">
+        <a
+          href="#home"
+          className="font-display text-2xl font-bold text-ink-100"
+        >
           {personal.name}
           <span className="text-crimson">.</span>
         </a>
@@ -69,7 +76,9 @@ export default function Navbar() {
                 href={link.href}
                 onClick={() => handleClick(link.href)}
                 className={`relative text-sm font-medium transition-colors ${
-                  active === link.href ? "text-crimson-light" : "text-ink-100/80 hover:text-ink-100"
+                  active === link.href
+                    ? "text-crimson-light"
+                    : "text-ink-100/80 hover:text-ink-100"
                 }`}
               >
                 {link.label}
@@ -84,13 +93,13 @@ export default function Navbar() {
           ))}
         </ul>
 
-        <a
-          href={personal.resumeFile}
-          download
+        {/* Desktop Resume Button */}
+        <button
+          onClick={() => setResumeModalOpen(true)}
           className="hidden md:inline-flex items-center rounded-full bg-crimson px-5 py-2.5 text-sm font-semibold text-white btn-glow mr-10"
         >
           Resume
-        </a>
+        </button>
 
         <button
           className="md:hidden text-ink-100 text-2xl"
@@ -121,19 +130,29 @@ export default function Navbar() {
                   </a>
                 </li>
               ))}
+
+              {/* Mobile Resume Button */}
               <li>
-                <a
-                  href={personal.resumeFile}
-                  download
+                <button
+                  onClick={() => {
+                    setResumeModalOpen(true);
+                    setOpen(false);
+                  }}
                   className="inline-flex rounded-full bg-crimson px-5 py-2.5 text-sm font-semibold text-white"
                 >
                   Resume
-                </a>
+                </button>
               </li>
             </ul>
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Resume Download Modal */}
+      <ResumeDownloadModal
+        open={resumeModalOpen}
+        onClose={() => setResumeModalOpen(false)}
+      />
     </motion.header>
   );
 }
