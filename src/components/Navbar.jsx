@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { HiMenu, HiX } from "react-icons/hi";
 import { navLinks, personal } from "../data/portfolioData";
+import ResumeDownloadModal from "./ResumeDownloadModal";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
